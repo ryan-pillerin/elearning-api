@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('access_levels', function (Blueprint $table) {
             $table->id();
-            $table->json('modules')->default('{}');
+            $table->json('modules');
             $table->json('access');
             $table->json('log');
             $table->timestamps();
