@@ -11,13 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('employees', function (Blueprint $table) {
+        Schema::create('access_levels', function (Blueprint $table) {
             $table->id();
-            $table->string('firstname');
-            $table->string('lastname');
-            $table->string('middlename')->nullable();
-            $table->json('contacts')->nullable()->default('{"email: "", "mobile": ""})');
-            $table->json('address')->nullable()->default('{"street":"", "barangay": "", "city":"", "province":"", "postalcode":""}');
+            $table->json('modules')->default('{}');
+            $table->json('access')->default('{"view": true, "create": true, "edit": true, "delete": true}');
             $table->json('log')->default('{"created_by":"", "updated_by":""}');
             $table->timestamps();
         });
@@ -28,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('employees');
+        Schema::dropIfExists('access_levels');
     }
 };
