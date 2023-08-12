@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('instructors', function (Blueprint $table) {
             $table->id();
-            $table->BigInteger('users_id');
-            $table->BigInteger('employees_id');
-            $table->BigInteger('access_level_id');
-            $table->json('log')->default('{"created_by":"", "updated_by":""}');
+            $table->integer('users_id');
+            $table->integer('employees_id');
+            $table->integer('access_level_id');
+            $table->json('log');
             $table->timestamps();
         });
     }

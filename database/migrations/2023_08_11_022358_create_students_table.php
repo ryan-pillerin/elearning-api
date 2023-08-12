@@ -14,13 +14,13 @@ return new class extends Migration
         Schema::create('students', function (Blueprint $table) {
             $table->id();
             $table->string('id_prefix');
-            $table->BigInteger('users_id');
-            $table->json('name')->default('{"firstname": "", "lastname": "", "middlename": ""}');
+            $table->integer('users_id');
+            $table->json('name');
             $table->date('birthdate');
-            $table->json('address')->nullable()->default('{"street":"", "barangay": "", "city":"", "province":"", "postalcode":""}');
-            $table->json('contacts')->nullable()->default('{"email: "", "mobile": ""})');
-            $table->BigInteger('access_level_id');
-            $table->json('log')->default('{"created_by":"", "updated_by":""}');
+            $table->json('address');
+            $table->json('contacts');
+            $table->integer('access_level_id');
+            $table->json('log');
             $table->timestamps();
         });
     }

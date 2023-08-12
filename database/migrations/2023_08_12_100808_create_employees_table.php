@@ -16,9 +16,9 @@ return new class extends Migration
             $table->string('firstname');
             $table->string('lastname');
             $table->string('middlename')->nullable();
-            $table->json('contacts')->nullable()->default('{"email: "", "mobile": ""})');
-            $table->json('address')->nullable()->default('{"street":"", "barangay": "", "city":"", "province":"", "postalcode":""}');
-            $table->json('log')->default('{"created_by":"", "updated_by":""}');
+            $table->json('contacts');
+            $table->json('address');
+            $table->json('log');
             $table->timestamps();
         });
     }

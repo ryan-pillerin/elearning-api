@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('access_levels', function (Blueprint $table) {
             $table->id();
             $table->json('modules')->default('{}');
-            $table->json('access')->default('{"view": true, "create": true, "edit": true, "delete": true}');
-            $table->json('log')->default('{"created_by":"", "updated_by":""}');
+            $table->json('access');
+            $table->json('log');
             $table->timestamps();
         });
     }
