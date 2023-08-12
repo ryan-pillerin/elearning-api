@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class AccessLevel extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'modules',
+        'access',
+        'log'
+    ];
+
 }
